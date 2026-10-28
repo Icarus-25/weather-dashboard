@@ -19,7 +19,7 @@ public class WeatherDashboardView extends BorderPane {
     public WeatherDashboardView() {
         setPadding(new Insets(20));
 
-        Label title = new Label("Weather Dashboard");
+        Label title = new Label("Weather Dashboard - Test");
         title.setStyle("-fx-font-size: 28;");
 
         ComboBox<String> cityBox = new ComboBox<>();
