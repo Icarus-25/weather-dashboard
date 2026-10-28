@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'com.gradleup.shadow' version '9.6.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+    implementation 'org.apache.commons:commons-lang3:3.17.0'
+}
+
+javafx {
+    version = '21'
+    modules = [ 'javafx.controls' ]
+}
+
+application {
+    mainClass = 'edu.example.weather.Launcher'
+}
+
+shadowJar {
+    archiveFileName = 'weather-dashboard-all.jar'
+    mergeServiceFiles()
+    manifest {
+        attributes 'Main-Class': 'edu.example.weather.Launcher'
+    }
+}
